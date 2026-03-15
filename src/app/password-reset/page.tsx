@@ -1,4 +1,4 @@
-import { PasswordResetPage } from '@/pages/password-reset/ui/PasswordResetPage';
+import { PasswordResetPage } from '@/views/password-reset/ui/PasswordResetPage';
 
 export default function Page() {
   return <PasswordResetPage />;
