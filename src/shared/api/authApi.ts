@@ -2,6 +2,9 @@ import { request } from './request';
 import type { User } from '@/entities/user/model/types';
 
 export const authApi = {
+  loginAsDemo: () =>
+    request<{ user: User }>('/demo', { method: 'POST' }),
+
   login: (email: string, password: string) =>
     request<{ user: User }>('/auth', {
       method: 'POST',

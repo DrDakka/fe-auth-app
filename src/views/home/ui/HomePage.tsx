@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useAuth } from '@/entities/user/model/AuthContext';
+import { DemoButton } from '@/features/auth/demo/ui/DemoButton';
 
 export function HomePage() {
   const { user } = useAuth();
@@ -24,19 +25,27 @@ export function HomePage() {
           </Link>
         </div>
       ) : (
-        <div className="flex gap-3 justify-center">
-          <Link
-            href="/login"
-            className="bg-gray-900 text-white px-5 py-2 rounded hover:bg-gray-700"
-          >
-            Login
-          </Link>
-          <Link
-            href="/register"
-            className="border border-gray-300 px-5 py-2 rounded hover:bg-gray-50"
-          >
-            Register
-          </Link>
+        <div className="space-y-4">
+          <DemoButton />
+          <div className="flex items-center gap-3">
+            <hr className="flex-1 border-gray-200" />
+            <span className="text-xs text-gray-400">or</span>
+            <hr className="flex-1 border-gray-200" />
+          </div>
+          <div className="flex gap-3 justify-center">
+            <Link
+              href="/login"
+              className="bg-gray-900 text-white px-5 py-2 rounded hover:bg-gray-700"
+            >
+              Login
+            </Link>
+            <Link
+              href="/register"
+              className="border border-gray-300 px-5 py-2 rounded hover:bg-gray-50"
+            >
+              Register
+            </Link>
+          </div>
         </div>
       )}
     </div>
